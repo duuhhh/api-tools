@@ -8,7 +8,7 @@ const rl = readline.createInterface({ input, output });
 const signJwt = async (email, apiKey) => {
   return new jose.SignJWT()
     .setProtectedHeader({ alg: 'HS256' })
-    .setSubject(email)
+    .setSubject({email})
     .sign(new TextEncoder().encode(apiKey));
 };
 
