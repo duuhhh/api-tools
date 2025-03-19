@@ -1,0 +1,20 @@
+{
+  "name": "scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sign-jwt": "node jwt-signer.mjs"
+  },
+  "bin": {
+    "jwt-signer": "./jwt-signer.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.5.0",
+  "type": "module",
+  "dependencies": {
+    "jose": "^6.0.10"
+  }
+}
