@@ -5,18 +5,18 @@ import { stdin as input, stdout as output } from 'node:process';
 
 const rl = readline.createInterface({ input, output });
 
-const signJwt = async (email, apiKey) => {
+const signJwt = async (id, apiKey) => {
   return new jose.SignJWT()
     .setProtectedHeader({ alg: 'HS256' })
-    .setSubject({email})
+    .setSubject({id})
     .sign(new TextEncoder().encode(apiKey));
 };
 
 try {
-  const email = await rl.question('Enter email: ');
+  const id = await rl.question('Enter API key ID: ');
   const apiKey = await rl.question('Enter API key: ');
   
-  const jwt = await signJwt(email, apiKey);
+  const jwt = await signJwt(id, apiKey);
   console.log('\nSigned JWT:', jwt);
 } catch (err) {
   console.error('Error:', err.message);
