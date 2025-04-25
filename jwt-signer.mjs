@@ -13,8 +13,8 @@ const signJwt = async (id, apiKey) => {
 };
 
 try {
-  const id = await rl.question('Enter API key ID: ');
-  const apiKey = await rl.question('Enter API key: ');
+  const id = await rl.question('Enter API Key ID: ');
+  const apiKey = await rl.question('Enter API Key Secret: ');
   
   const jwt = await signJwt(id, apiKey);
   console.log('\nSigned JWT:', jwt);
